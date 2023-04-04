@@ -1,4 +1,6 @@
-@import '~/assets/styles/reset';
 @import '~/assets/styles/global';
-@import '~/assets/styles/mixin';
-@import '~/assets/styles/variables';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+.app{
+    color: red;
+}

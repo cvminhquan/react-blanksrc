@@ -1,0 +1,10 @@
+@import 'src/assets/styles/global.scss';
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.mainHeader{
+    background-color: rgb(88, 88, 230);
+}
+.logo{
+    width: 50px;
+    height: 50px;
+}
