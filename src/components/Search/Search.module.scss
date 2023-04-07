@@ -1,0 +1,27 @@
+@import "src/assets/styles/reset";
+@import 'src/assets/styles/global.scss';
+@import "src/assets/styles/mixin";
+@import "src/assets/styles/variables";
+
+.search-area{
+    margin: 8px 0 0;
+    background: #fff;
+    border-radius: 2px;
+}
+.categories-filter{
+    border-right: 1px solid #E0E0E0;
+    text-transform: capitalize;
+    display: inline-block;
+    line-height: 44px;
+    background: #f6f6f6;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.search-field{
+    border: medium none;
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+    padding: 13px;
+    width: 67%;
+}

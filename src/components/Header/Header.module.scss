@@ -1,10 +1,126 @@
 @import 'src/assets/styles/global.scss';
-@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
-.mainHeader{
-    background-color: rgb(88, 88, 230);
+.mainHeader {
+  background-color: rgb(88, 88, 230);
 }
-.logo{
-    width: 50px;
-    height: 50px;
+.logo {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 700;
+  font-style: italic;
+  .mainLogo {
+    font-size: 2.5rem;
+    color: #fdd922;
+  }
+}
+.center {
+  align-items: center;
+}
+.search {
+}
+.navbar {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+.navbar .navbar-brand img {
+  max-width: 100px;
+}
+.navbar .navbar-nav .nav-link {
+  color: #000;
+}
+@media screen and (min-width: 1024px) {
+  .navbar {
+    letter-spacing: 0.1em;
+  }
+  .navbar .navbar-nav .nav-link {
+    padding: 0.5em 1em;
+  }
+  .search-and-icons {
+    width: 50%;
+  }
+  .search-and-icons form {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navbar .navbar-brand img {
+    max-width: 7em;
+  }
+  .navbar .navbar-collapse {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  .search-and-icons {
+    display: flex;
+    align-items: center;
+  }
+}
+.search-and-icons form input {
+  border-radius: 0;
+  height: 2em;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='grey' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E")
+    no-repeat 95%;
+}
+.search-and-icons form input:focus {
+  background: #fff;
+  box-shadow: none;
+}
+.search-and-icons .user-icons div {
+  padding-right: 1em;
+}
+.contact-info p,
+.contact-info a {
+  font-size: 0.9em;
+  padding-right: 1em;
+  color: grey;
+}
+.contact-info a {
+  padding-right: 0;
+}
+
+//cart
+.top-cart-row {
+  padding-top: 8px;
+  padding-left: 0px;
+}
+.dropdown-cart {
+  float: right;
+}
+.link-cart {
+  padding: 0px;
+  background: #006cb4;
+  border: 1px solid #24609c;
+  border-radius: 3px;
+  display: inline-block;
+  color: #fff;
+}
+.item-cart-inner {
+  position: relative;
+}
+.basket {
+  float: left;
+  padding: 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 18px 13px 12px;
+}
+.basket-item-count {
+  border-radius: 100px;
+  height: 18px;
+  position: absolute;
+  left: 34px;
+  top: 13px;
+  width: 18px;
+  background: #fdd922;
+  color: #0f6cb2;
+  font-size: 11px;
+  text-align: center;
+  line-height: 19px;
+}
+.total-price-basket{
+  padding: 12px 12px 13px 15px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    float: left;
+    letter-spacing: 0.5px;
 }
