@@ -8,3 +8,16 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.column{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  max-height: inherit;
+}

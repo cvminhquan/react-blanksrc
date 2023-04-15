@@ -1,0 +1,33 @@
+@import 'src/assets/styles/reset';
+@import 'src/assets/styles/global.scss';
+@import 'src/assets/styles/mixin';
+@import 'src/assets/styles/variables';
+
+.topBar {
+  background-color: $color-primary;
+  .topBarInner {
+    height: 42px;
+    max-height: 42px;
+  }
+}
+.topBarLeft {
+  .listTopBar {
+    display: flex;
+    align-items: center;
+    --nav-gap: 20px;
+    flex-wrap: wrap;
+    text-align: left;
+    height: 100%;
+    li{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    a {
+      color: $color-text;
+    }
+  }
+}
+.border-1{
+  border-right: 1px solid #fff;
+}

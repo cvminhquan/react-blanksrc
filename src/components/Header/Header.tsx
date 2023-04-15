@@ -4,10 +4,12 @@ import logo from '../../assets/img/logo.png'
 import classNames from 'classnames'
 import Search from '../Search/Search'
 import { Link } from 'react-router-dom'
+import TopBar from './TopBar/TopBar'
 
 const Header: React.FC = (props) => {
   return (
     <div className={styles['root']}>
+      <TopBar/>
       <div className={styles.mainHeader}>
         <div className='container'>
           <div className={classNames(styles.center, 'row')}>
