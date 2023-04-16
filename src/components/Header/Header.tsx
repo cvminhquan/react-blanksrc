@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Header.module.scss'
-import logo from '../../assets/img/logo.png'
+import logo from '../../assets/img/wood-logo-dark.svg'
 import classNames from 'classnames'
 import Search from '../Search/Search'
 import { Link } from 'react-router-dom'
@@ -15,10 +15,11 @@ const Header: React.FC = (props) => {
           <div className={classNames(styles.center, 'row')}>
             <div className='col-xs-12 col-sm-12 col-md-3'>
               <Link to='/'>
-                <span className={styles.logo}>
+                {/* <span className={styles.logo}>
                   <span className={styles.mainLogo}>F</span>
                   unimart
-                </span>
+                </span> */}
+                <img className={styles.logo} src={logo} alt="" />
               </Link>
             </div>
             <div className='col-xs-12 col-sm-12 col-lg-7'>

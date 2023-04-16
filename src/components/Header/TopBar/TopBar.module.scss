@@ -14,20 +14,29 @@
   .listTopBar {
     display: flex;
     align-items: center;
-    --nav-gap: 20px;
     flex-wrap: wrap;
     text-align: left;
     height: 100%;
-    li{
+    li {
+      height: 100%;
+      
+      display: flex;
+      align-items: center;
+      &::after {
+        content: '';
         height: 100%;
-        display: flex;
-        align-items: center;
+        position: relative;
+        inset-inline-end: calc((var(--nav-gap) / 2) * -1);
+        border-right: 1px solid rgba(0, 0, 0, 0.105);
+        border-color: rgba(255, 255, 255, 0.25);
+      }
     }
     a {
       color: $color-text;
+      padding: 10px;
     }
   }
 }
-.border-1{
+.border-1 {
   border-right: 1px solid #fff;
 }

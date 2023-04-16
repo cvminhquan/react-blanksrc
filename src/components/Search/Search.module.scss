@@ -7,6 +7,10 @@
     margin: 8px 0 0;
     background: #fff;
     border-radius: 2px;
+    form{
+        border: 2px solid #cccccc;
+        border-radius: 50px;
+    }
 }
 .categories-filter{
     border-right: 1px solid #E0E0E0;
@@ -21,7 +25,14 @@
     border: medium none;
     -webkit-border-radius: 5px 0 0 5px;
     -moz-border-radius: 5px 0 0 5px;
-    border-radius: 5px 0 0 5px;
+    border-radius: 50px 0 0 50px;
     padding: 13px;
     width: 67%;
+    &:focus-visible{
+        border: none;
+        outline: none;
+    }
+}
+.wrapperForm{
+
 }
