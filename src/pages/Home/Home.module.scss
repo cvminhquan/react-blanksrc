@@ -2,3 +2,12 @@
 @import 'src/assets/styles/global.scss';
 @import "src/assets/styles/mixin";
 @import "src/assets/styles/variables";
+
+#tooltip {
+    background: #222;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 90%;
+  }

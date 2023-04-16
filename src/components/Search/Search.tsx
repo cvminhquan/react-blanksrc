@@ -3,7 +3,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import styles from './Search.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FiSearch } from 'react-icons/fi';
 interface SearchFormData {
   query: string
 }
@@ -18,11 +18,12 @@ const Search: React.FC = () => {
   return (
     <div className={styles['search-area']}>
       <form>
-        <div className={classNames(styles.wrapperForm,'control-group')}>
-          <ul className={classNames(styles["categories-filter"], 'animate-dropdown')}>
-          </ul>
+        <div className={classNames(styles.wrapperForm, 'control-group', 'd-flex')}>
           <input className={styles['search-field']} placeholder='Search here...' />
-          <FontAwesomeIcon icon="fa-sharp fa-solid fa-magnifying-glass" />
+          <button type='submit' className={classNames(styles.searchsubmit,'d-flex align-items-center')}>
+            <FiSearch color='gray'/>
+            <span>Search</span>
+          </button>
         </div>
       </form>
     </div>

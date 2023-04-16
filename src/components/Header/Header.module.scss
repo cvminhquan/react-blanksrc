@@ -1,16 +1,21 @@
 @import 'src/assets/styles/global.scss';
 
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 .mainHeader {
-  // background-color: rgb(88, 88, 230);
 }
 .logo {
+  margin-left: 10px;
   height: 35px;
-  color: #fff;
+  color: #000;
   font-weight: 700;
-  font-style: italic;
+  // font-style: italic;
+  font-size: 2rem;
+  letter-spacing: 3px;
   .mainLogo {
     font-size: 2.5rem;
-    color: #fdd922;
+    // color: #fdd922;
   }
 }
 .center {
@@ -80,48 +85,15 @@
   padding-right: 0;
 }
 
-//cart
-.top-cart-row {
-  padding-top: 8px;
-  padding-left: 0px;
-}
-.dropdown-cart {
-  float: right;
-}
-.link-cart {
-  padding: 0px;
-  background: #006cb4;
-  border: 1px solid #24609c;
-  border-radius: 3px;
-  display: inline-block;
-  color: #fff;
-}
-.item-cart-inner {
-  position: relative;
-}
-.basket {
-  float: left;
-  padding: 12px;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 12px 18px 13px 12px;
-}
-.basket-item-count {
-  border-radius: 100px;
-  height: 18px;
-  position: absolute;
-  left: 34px;
-  top: 13px;
-  width: 18px;
-  background: #fdd922;
-  color: #0f6cb2;
-  font-size: 11px;
-  text-align: center;
-  line-height: 19px;
-}
-.total-price-basket{
-  padding: 12px 12px 13px 15px;
-    font-family: 'Open Sans', sans-serif;
+//header right
+.header-right {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  .header-account {
     text-transform: uppercase;
-    float: left;
-    letter-spacing: 0.5px;
+    font-size: 13px;
+    font-weight: 600;
+  }
 }

@@ -1,38 +1,50 @@
-@import "src/assets/styles/reset";
+@import 'src/assets/styles/reset';
 @import 'src/assets/styles/global.scss';
-@import "src/assets/styles/mixin";
-@import "src/assets/styles/variables";
+@import 'src/assets/styles/mixin';
+@import 'src/assets/styles/variables';
 
-.search-area{
-    margin: 8px 0 0;
-    background: #fff;
-    border-radius: 2px;
-    form{
-        border: 2px solid #cccccc;
-        border-radius: 50px;
-    }
+.search-area {
+  background: #fff;
+  border-radius: 2px;
+  form {
+    position: relative;
+    border: 2px solid #cccccc;
+    border-radius: 50px;
+  }
 }
-.categories-filter{
-    border-right: 1px solid #E0E0E0;
-    text-transform: capitalize;
-    display: inline-block;
-    line-height: 44px;
-    background: #f6f6f6;
-    border-radius: 3px 0px 0px 3px;
+.categories-filter {
+  border-right: 1px solid #e0e0e0;
+  text-transform: capitalize;
+  display: inline-block;
+  line-height: 44px;
+  background: #f6f6f6;
+  border-radius: 3px 0px 0px 3px;
 }
 
-.search-field{
-    border: medium none;
-    -webkit-border-radius: 5px 0 0 5px;
-    -moz-border-radius: 5px 0 0 5px;
-    border-radius: 50px 0 0 50px;
-    padding: 13px;
-    width: 67%;
-    &:focus-visible{
-        border: none;
-        outline: none;
-    }
+.search-field {
+  border: medium none;
+  -webkit-border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  border-radius: 50px 0 0 50px;
+  padding: 13px;
+  width: 94%;
+  &:focus-visible {
+    border: none;
+    outline: none;
+  }
 }
-.wrapperForm{
+.searchsubmit {
+  border: none;
+  outline: none;
+  border-radius: 0 20px 20px 0;
+  background: #e0e0e0;
 
+  svg {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+  }
+  &:hover {
+    background: #cccccc;
+  }
 }
