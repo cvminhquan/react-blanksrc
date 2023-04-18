@@ -4,10 +4,67 @@
 @import "src/assets/styles/variables";
 
 #tooltip {
-    background: #222;
-    color: white;
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 4px;
-    font-size: 90%;
+  width: max-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #222;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 90%;
+}
+
+.category {
+  min-width: 270px;
+  max-width: 270px;
+
+  @include breakpoint-down(smallphone) {
+    min-width: 100%;
+    max-width: 100%;
   }
+}
+
+.swiperHome {
+  display: none;
+  @include breakpoint-up(smallphone) {
+    margin-left: 20px !important;
+    display: block;
+  }
+}
+
+.menuCategory {
+  border-bottom: 1px solid rgba(0, 123, 196, 1);
+
+  .headerCategory {
+    position: relative;
+  }
+
+  .menuOpen {
+    padding: 15px;
+    // min-width: 270px;
+    background-color: rgba(0, 123, 196, 1);
+    color: white;
+
+    .menuIcon {
+      margin-right: 10px;
+    }
+  }
+}
+
+.listMenu {
+  box-shadow: none;
+
+  li {
+    border-bottom: 1px solid rgba(232, 232, 232, 1);
+    border-right: 1px solid rgba(232, 232, 232, 1);
+    border-left: 1px solid rgba(232, 232, 232, 1);
+  }
+
+  a {
+    padding: 12px 18px;
+    color: #000;
+    display: inline-block;
+  }
+}

@@ -5,11 +5,19 @@
 
 .topBar {
   background-color: $color-primary;
+
   .topBarInner {
     height: 42px;
     max-height: 42px;
+
+    @include breakpoint-down(xlargedesktop) {
+    }
+    @include breakpoint-down(smallphone) {
+      display: none;
+    }
   }
 }
+
 .topBarLeft {
   .listTopBar {
     display: flex;
@@ -17,12 +25,14 @@
     flex-wrap: wrap;
     text-align: left;
     height: 100%;
+
     li {
       height: 100%;
       font-size: 13px;
-      
+
       display: flex;
       align-items: center;
+
       &::after {
         content: '';
         height: 100%;
@@ -32,12 +42,14 @@
         border-color: rgba(255, 255, 255, 0.25);
       }
     }
+
     a {
       color: $color-text;
       padding: 10px;
     }
   }
 }
+
 .border-1 {
   border-right: 1px solid #fff;
 }

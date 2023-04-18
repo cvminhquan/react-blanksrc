@@ -1,6 +1,8 @@
 @import 'src/assets/styles/reset';
 @import 'src/assets/styles/mixin';
 @import 'src/assets/styles/variables';
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/class';
 body{
   font-family: 'Montserrat', sans-serif;
 }
@@ -24,4 +26,10 @@ body{
   align-items: center;
   flex-direction: row;
   max-height: inherit;
+}
+.active{
+  background-color: rgb(0, 123, 196);
+  a{
+    color: #fff !important;
+  }
 }

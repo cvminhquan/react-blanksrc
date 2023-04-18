@@ -1,33 +1,66 @@
 import React from 'react'
 import styles from './Home.module.scss'
-import { computePosition, flip, shift, offset } from '@floating-ui/dom'
-
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { Link } from 'react-router-dom'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "../../index.css"
+import { Pagination, Navigation } from "swiper";
+import classNames from 'classnames';
+import banner1 from '../../assets/img/01.jpg'
+import banner2 from '../../assets/img/02.jpg'
 
 const Home: React.FC = (props) => {
-  const button = document.querySelector('#button') as HTMLElement
-  const tooltip = document.querySelector('styles.tooltip') as HTMLElement
-  
-  if (button && tooltip) {
-    computePosition(button, tooltip, {
-      placement: 'top',
-      middleware: [offset(6), flip(), shift({ padding: 5 })]
-    }).then(({ x, y }) => {
-      Object.assign(tooltip.style, {
-        left: `${x}px`,
-        top: `${y}px`
-      })
-    })
-  }
-  
 
   return (
-    <div>
-      <button id='button' aria-describedby='tooltip'>
-        My button
-      </button>
-      <div id={styles.tooltip} role='tooltip'>
-        My tooltip
+    <div className='container mt-20'>
+      <div className="col col-xs-12 d-flex">
+        <div className={styles.category}>
+          <div className={styles.menuCategory}>
+            <div className={styles.headerCategory}>
+              <div className={styles.menuOpen}>
+                <span className={styles.menuIcon}><GiHamburgerMenu size={22} /></span>
+                <span className={styles.menuLabel}>Category</span>
+              </div>
+            </div>
+          </div>
+          <div className={styles.listMenu}>
+            <ul>
+              <li><Link to="">1</Link></li>
+              <li><Link to="">2</Link></li>
+              <li><Link to="">2</Link></li>
+              <li><Link to="">4</Link></li>
+              <li><Link to="">5</Link></li>
+              <li><Link to="">6</Link></li>
+              <li><Link to="">7</Link></li>
+            </ul>
+          </div>
+        </div>
+        <Swiper
+          slidesPerView={1}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          className={classNames("mySwiper", styles.swiperHome)}
+        >
+          <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={banner2} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={banner2} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={banner2} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={banner2} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
+          <SwiperSlide><img src={banner2} alt="" /></SwiperSlide>
+        </Swiper>
       </div>
+
     </div>
   )
 }
