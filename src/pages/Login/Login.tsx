@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Login.module.scss';
+import { Link } from 'react-router-dom';
 
 const Login: React.FC = (props) => {
   return (
@@ -63,7 +64,7 @@ const Login: React.FC = (props) => {
           </svg>
           <span>Sign In with Apple</span>
         </button>
-        <p className={styles.note}>Terms of use &amp; Conditions</p>
+        <p>Do not have account? <Link to="/register">Register Now</Link></p>
       </form>
       </div>
     </div>
