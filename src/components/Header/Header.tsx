@@ -1,14 +1,19 @@
 import React from 'react'
 import styles from './Header.module.scss'
-import logo from '../../assets/img/wood-logo-dark.svg'
 import classNames from 'classnames'
 import Search from '../Search/Search'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import TopBar from './TopBar/TopBar'
 import { FiHeart, FiShoppingCart } from 'react-icons/fi'
 import { GiDeadWood, GiHamburgerMenu } from 'react-icons/gi'
-import Login from '~/pages/Login/Login'
 const Header: React.FC = (props) => {
+  const navigation = [
+    { name: 'Home', href: "/" },
+    { name: 'Shop', href: "/shop" },
+    { name: 'Blog', href: "/blog" },
+    { name: 'Element', href: "/fads" },
+    { name: 'Buy', href: "/ádf" },
+  ]
 
   return (
     <div className={styles['root']}>
@@ -59,24 +64,15 @@ const Header: React.FC = (props) => {
               <div className={styles.innerLeft}>
                 <div className={styles.mainNav}>
                   <ul>
-                    <li className='active'>
-                      <Link to=""><span>Home</span></Link>
-                    </li>
-                    <li>
-                      <Link to=""><span>Shop</span></Link>
-                    </li>
-                    <li>
-                      <Link to=""><span>Blog</span></Link>
-                    </li>
-                    <li>
-                      <Link to=""><span>Pages</span></Link>
-                    </li>
-                    <li>
-                      <Link to="">Element</Link>
-                    </li>
-                    <li>
-                      <Link to="">Buy</Link>
-                    </li>
+                    {navigation.map((item) => (
+                      <li key={item.name}>
+                        <NavLink
+                          className={({ isActive }) => {
+                            return `${item.href} ${isActive ? "active" : ""}`;
+                          }}
+                          to={item.href}>{item.name}</NavLink>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -95,8 +91,7 @@ const Header: React.FC = (props) => {
             </div>
           </div>
         </div>
-
-      </div>   
+      </div>
     </div >
   )
 }

@@ -14,7 +14,10 @@ body{
 .container{
   max-width: 1222px;
 }
-
+.swiper-grid-column>.swiper-wrapper{
+  // flex-wrap: unset;
+  flex-direction: unset;
+}
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -29,7 +32,5 @@ body{
 }
 .active{
   background-color: rgb(0, 123, 196);
-  a{
     color: #fff !important;
-  }
 }

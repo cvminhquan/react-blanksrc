@@ -30,7 +30,11 @@
   display: none;
   @include breakpoint-up(smallphone) {
     margin-left: 20px !important;
-    display: block;
+    display: flex;
+  }
+  .swiper-slide{
+    height: 300px;
+    width: 300px;
   }
 }
 
@@ -66,5 +70,18 @@
     padding: 12px 18px;
     color: #000;
     display: inline-block;
+  }
+}
+
+//sectionCategory 
+.sectionCategory{
+  .listCategory {
+  }
+}
+.categoryItem{
+  display: flex;
+  flex-direction: column;
+  img{
+    
   }
 }
