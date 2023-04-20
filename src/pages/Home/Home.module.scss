@@ -1,7 +1,7 @@
-@import "src/assets/styles/reset";
+@import 'src/assets/styles/reset';
 @import 'src/assets/styles/global.scss';
-@import "src/assets/styles/mixin";
-@import "src/assets/styles/variables";
+@import 'src/assets/styles/mixin';
+@import 'src/assets/styles/variables';
 
 #tooltip {
   width: max-content;
@@ -19,6 +19,7 @@
 .category {
   min-width: 270px;
   max-width: 270px;
+  position: relative;
 
   @include breakpoint-down(smallphone) {
     min-width: 100%;
@@ -32,22 +33,20 @@
     margin-left: 20px !important;
     display: flex;
   }
-  .swiper-slide{
-    height: 300px;
-    width: 300px;
+  .swiper-slide {
+    // height: 300px;
+    // width: 300px;
   }
 }
 
 .menuCategory {
   border-bottom: 1px solid rgba(0, 123, 196, 1);
-
   .headerCategory {
     position: relative;
   }
 
   .menuOpen {
     padding: 15px;
-    // min-width: 270px;
     background-color: rgba(0, 123, 196, 1);
     color: white;
 
@@ -59,11 +58,49 @@
 
 .listMenu {
   box-shadow: none;
-
+  transition: all 5s ease-in-out;
+  .subMenu {
+    background-color: #fff;
+    border: 1px solid rgba(0, 123, 196, 1);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out;
+    top: 0;
+    left: 100%;
+    width: 835px;
+    li a {
+      padding: 15px 40px;
+      color: #fff;
+      display: block;
+      text-align: left;
+    }
+  }
   li {
     border-bottom: 1px solid rgba(232, 232, 232, 1);
     border-right: 1px solid rgba(232, 232, 232, 1);
     border-left: 1px solid rgba(232, 232, 232, 1);
+    &:hover {
+      transition: all 0.5s ease;
+      ul li {
+        a:hover{
+          font-weight: 600;
+        }
+      }
+      a {
+        color: #000;
+        font-weight: 500;
+        &:hover {
+          // font-weight: 600;
+        }
+      }
+      .subMenu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   a {
@@ -73,15 +110,14 @@
   }
 }
 
-//sectionCategory 
-.sectionCategory{
+//sectionCategory
+.sectionCategory {
   .listCategory {
   }
 }
-.categoryItem{
+.categoryItem {
   display: flex;
   flex-direction: column;
-  img{
-    
+  img {
   }
 }

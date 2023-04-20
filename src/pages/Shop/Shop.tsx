@@ -3,7 +3,7 @@ import styles from './Shop.module.scss';
 
 const Shop: React.FC = (props) => {
   return (
-    <div>Shop component</div>
+    <div className='container'>Shop component</div>
   );
 }
 
