@@ -7,6 +7,8 @@ import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import Shop from './pages/Shop/Shop'
 import Blog from './pages/Blog/Blog'
+import Category from './pages/Category/Category'
+import Product from './components/Product/Product'
 function App() {
 
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route element={<Register/>} path="/register"></Route>
         <Route element={<Shop/>} path="/shop"></Route>
         <Route element={<Blog/>} path="/blog"></Route>
+        <Route element={<Product/>} path="/product"></Route>
+        <Route element={<Category/>} path="/category/:keyword" />
       </Routes>
     </Router>
     </>

@@ -41,7 +41,9 @@ const Header: React.FC = (props) => {
             </div>
             <div className={classNames('col col-md-3 animate-dropdown', styles['header-right'])}>
               <div className={styles['header-account']}>
-                <Link to="login">Login/Register</Link>
+                <Link to="login">Login</Link>
+                <div className={styles.borderRight}></div>
+                <Link to="register">Register</Link>
               </div>
               <div className={styles.whishlist}>
                 <Link to='/'>

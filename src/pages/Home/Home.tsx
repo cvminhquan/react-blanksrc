@@ -12,35 +12,9 @@ import { Pagination, Navigation, Grid } from 'swiper'
 import classNames from 'classnames'
 import banner1 from '../../assets/img/01.jpg'
 import banner2 from '../../assets/img/02.jpg'
+import { listCategories } from '~/data/listCategories'
 
 const Home: React.FC = (props) => {
-  const listCategories = [
-    { id: 1, name: 'Wood Funiture', parentId: null },
-    { id: 2, name: 'Upholstery & Mattess', parentId: null },
-    { id: 3, name: 'Home Decoration', parentId: null },
-    { id: 4, name: 'Textiles', parentId: null },
-    { id: 5, name: 'Kitchenware', parentId: null },
-    { id: 6, name: 'Small Storage', parentId: null },
-    { id: 7, name: 'Collections', parentId: null },
-    { id: 2, name: 'Table', parentId: 1 },
-    { id: 3, name: 'Dining Table Set', parentId: 1 },
-    { id: 4, name: 'Beds', parentId: 1 },
-    { id: 6, name: 'Chair, Stools & Benchs', parentId: 1 },
-    { id: 7, name: 'Wall-mounted Product', parentId: 1 },
-    { id: 8, name: 'Mirrors', parentId: 1 },
-    { id: 10, name: "Kid's Furnitures", parentId: 1 },
-    { id: 11, name: 'Sofas', parentId: 2 },
-    { id: 12, name: 'Living Room Chairs', parentId: 2 },
-    { id: 13, name: 'Mattresses', parentId: 2 },
-    { id: 14, name: 'Lamps', parentId: 3 },
-    { id: 15, name: 'Aroma Oil & Potpourris', parentId: 3 },
-    { id: 16, name: 'Frames, Painting & Pictures', parentId: 3 },
-    { id: 17, name: 'Artificial Flowers & Plants', parentId: 3 },
-    { id: 18, name: 'Clocks', parentId: 3 },
-    { id: 19, name: 'Candles, Tealights & Holders', parentId: 3 },
-    { id: 20, name: 'Decorative Objects', parentId: 3 },
-    { id: 21, name: 'Soft Toys', parentId: 3 }
-  ]
   const parentCategories = listCategories.filter((item) => item.parentId === null)
   return (
     <div className='container'>
@@ -59,8 +33,8 @@ const Home: React.FC = (props) => {
           <div className={styles.listMenu}>
             <ul className={styles.menu}>
               {parentCategories.map((category) => (
-                <li key={category.name}>
-                  <Link to='' className='d-flex justify-content-between align-items-center'>
+                <li key={category.name} className='position-relative'>
+                  <Link to={`/category/${category.keyword}`} className='d-flex justify-content-between align-items-center'>
                     <span>{category.name}</span>
                     <span>
                       <MdOutlineKeyboardArrowRight />
@@ -73,7 +47,7 @@ const Home: React.FC = (props) => {
                           .filter((item) => item.parentId === category.id)
                           .map((subCategory) => (
                             <div className='col-lg-3' key={subCategory.id}>
-                              <Link to=''>{subCategory.name}</Link>
+                              <Link to={`/category/${subCategory.keyword}`}>{subCategory.name}</Link>
                             </div>
                           ))}
                       </div>
