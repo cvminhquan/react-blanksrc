@@ -2,10 +2,16 @@ import React from 'react';
 import styles from './Product.module.scss';
 import { Link } from 'react-router-dom';
 import { IoHeart } from 'react-icons/io5';
-const Product: React.FC = (props) => {
+import classNames from 'classnames';
+interface ProductProps {
+  id: number;
+  name: string;
+  price: number;
+}
+const Product: React.FC<ProductProps> = ({ id, name, price }) => {
   return (
-    <div className='container'>
-      <div className={styles["product-item"]}>
+    <div className='col-lg-3'>
+      <div className={classNames(styles["product-item"])}>
         <div className={styles["product-info"]}>
           <Link to="" className={styles['product-photo']}>
             <span className={styles.productContainer}>
@@ -13,7 +19,7 @@ const Product: React.FC = (props) => {
             </span>
           </Link>
           <div className={styles["product-item-detail"]}>
-            <h2 className={styles.productTitle}>Bàn cà phê</h2>
+            <h2 className={styles.productTitle}>{name}</h2>
             <Link className={styles.productBrand} to="">
               <strong>
                 Julianne
@@ -38,6 +44,7 @@ const Product: React.FC = (props) => {
         </div>
       </div>
     </div>
+
   );
 }
 

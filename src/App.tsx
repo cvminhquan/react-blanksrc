@@ -21,7 +21,6 @@ function App() {
         <Route element={<Register/>} path="/register"></Route>
         <Route element={<Shop/>} path="/shop"></Route>
         <Route element={<Blog/>} path="/blog"></Route>
-        <Route element={<Product/>} path="/product"></Route>
         <Route element={<Category/>} path="/category/:keyword" />
       </Routes>
     </Router>
