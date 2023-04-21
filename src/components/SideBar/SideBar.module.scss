@@ -1,0 +1,53 @@
+@import 'src/assets/styles/reset';
+@import 'src/assets/styles/global.scss';
+@import 'src/assets/styles/mixin';
+@import 'src/assets/styles/variables';
+
+.sideBar {
+  .listCategories {
+    border: 1px solid #ececec;
+    // border-radius: 8px;
+    .parentCategories {
+      padding: 12px 18px;
+      border-bottom: 1px solid #ececec;
+      transition: 0.5s all ease-in-out;
+      a {
+        color: $color-p-black;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &:hover {
+        background-color: #f7f7f7;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+      &:active{
+        max-height: auto;
+      }
+    }
+  }
+}
+.toggleArrow {
+  cursor: pointer;
+}
+.subMenu {
+  margin: 5px 0 0 40px;
+  transition: max-height 0.3s ease-out;
+  .subMenuItem a {
+    display: inline-block;
+    padding: 12px 0;
+    border-bottom: 1px solid #ececec;
+    transition: 0.5s all ease-in-out;
+    a {
+      color: $color-p-black;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

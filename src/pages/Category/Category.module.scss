@@ -1,4 +1,37 @@
-@import "src/assets/styles/reset";
+@import 'src/assets/styles/reset';
 @import 'src/assets/styles/global.scss';
-@import "src/assets/styles/mixin";
-@import "src/assets/styles/variables";
+@import 'src/assets/styles/mixin';
+@import 'src/assets/styles/variables';
+
+.breadcrumbs {
+  margin: 20px 0;
+  .breadcrumbsItem {
+    display: inline-block;
+    align-items: center;
+    color: #000;
+    letter-spacing: 1.35px;
+    line-height: 12px;
+    gap: 10px;
+    > * {
+      display: inline-block;
+      a{
+        color: #000;
+        &:hover{
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
+.pageTitleWrapper {
+  text-align: center;
+  margin: 40px 0;
+}
+.categoryTitle {
+  text-transform: uppercase;
+  font-size: 36px;
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 51px;
+}

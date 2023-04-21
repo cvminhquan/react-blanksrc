@@ -15,7 +15,7 @@ import banner2 from '../../assets/img/02.jpg'
 import { listCategories } from '~/data/listCategories'
 
 const Home: React.FC = (props) => {
-  const parentCategories = listCategories.filter((item) => item.parentId === null)
+  const parentCategories = listCategories.filter((item) => item.parentId === null);
   return (
     <div className='container'>
       <div className='col-12 d-flex my-30'>
