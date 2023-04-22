@@ -3,7 +3,7 @@ import styles from './Product.module.scss'
 import { Link } from 'react-router-dom'
 import { BsHeart } from 'react-icons/bs'
 import classNames from 'classnames'
-import { FiSearch } from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi'
 
 interface ProductProps {
   id: number
@@ -31,19 +31,19 @@ const Product: React.FC<ProductProps> = ({ id, name, price }) => {
             <div className={styles.priceBox}>4.490.000</div>
             <div className={styles['product-item-inner']}>
               <div className={styles.innerVisible}>
-              <div className={styles.productAction}>
-                <div>
-                  <Link to='' className={styles.actionWhishlist}>
-                    <BsHeart color='gray' size={25} />
-                  </Link>
+                <div className={styles.productAction}>
+                  <div>
+                    <Link to='' title='Add to Wishlist' className={styles.actionWhishlist}>
+                      <BsHeart color='gray' size={25} />
+                    </Link>
+                  </div>
+                  <div className={styles.actionAdd}>
+                    <Link to=''>Add to Cart</Link>
+                  </div>
+                  <div className={styles.preview}>
+                    <FiSearch color='gray' size={25} />
+                  </div>
                 </div>
-                <div className={styles.actionAdd}>
-                  <Link to="">Add to Cart</Link>
-                </div>
-                <div className={styles.preview}>
-                  <FiSearch color='gray' size={25} />
-                </div>
-              </div>
               </div>
             </div>
           </div>
