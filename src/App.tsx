@@ -9,6 +9,7 @@ import Shop from './pages/Shop/Shop'
 import Blog from './pages/Blog/Blog'
 import Category from './pages/Category/Category'
 import Product from './components/Product/Product'
+import ProductDetail from './components/ProductDetail/ProductDetail'
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route element={<Shop/>} path="/shop"></Route>
         <Route element={<Blog/>} path="/blog"></Route>
         <Route element={<Category/>} path="/category/:keyword" />
+        <Route element={<ProductDetail/>} path="/product/:slug" />
       </Routes>
     </Router>
     </>

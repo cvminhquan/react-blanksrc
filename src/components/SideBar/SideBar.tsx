@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react'
 import styles from './SideBar.module.scss'
 import { listCategories } from '~/data/listCategories'
@@ -25,16 +23,17 @@ const SideBar: React.FC = (props) => {
   return (
     <div className={styles.sideBar}>
       <ul className={styles.listCategories}>
-        {parentCategories.map((category) => (
-          <li key={category.name} className={classNames(styles.parentCategories, 'position-relative')}>
-            <div className='d-flex justify-content-between align-items-center'>
-              <Link to={`/category/${category.keyword}`}>{category.name}</Link>
-              <span className={styles.toggleArrow} onClick={() => toggleCategory(category.id)} >
-                <MdOutlineKeyboardArrowDown size={20}/>
-              </span>
-            </div>
-            {openCategoryIds.includes(category.id) &&
-              <ul className={styles.subMenu}>
+        {parentCategories.map((category) => {
+          const isCategoryOpen = openCategoryIds.includes(category.id);
+          return (
+            <li key={category.name} className={classNames(styles.parentCategories, 'position-relative')}>
+              <div className='d-flex justify-content-between align-items-center'>
+                <Link className={styles.categoryName} to={`/category/${category.keyword}`}>{category.name}</Link>
+                <span className={styles.toggleArrow + ' ' + (isCategoryOpen ? styles.open : '')} onClick={() => toggleCategory(category.id)} >
+                  <MdOutlineKeyboardArrowDown size={25}/>
+                </span>
+              </div>
+              <ul className={classNames(styles.subMenu, { [styles.open]: isCategoryOpen })}>
                 <li className={styles.subMenuItem}>
                   <div className='row'>
                     {listCategories
@@ -47,12 +46,12 @@ const SideBar: React.FC = (props) => {
                   </div>
                 </li>
               </ul>
-            }
-          </li>
-        ))}
+            </li>
+          )
+        })}
       </ul>
     </div>
   )
 }
 
-export default SideBar
+export default SideBar;

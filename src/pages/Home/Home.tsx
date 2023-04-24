@@ -85,7 +85,7 @@ const Home: React.FC = (props) => {
           <div className={styles.listMenu}>
             <ul className={styles.menu}>
               {parentCategories.map((category) => (
-                <li key={category.name} className='position-relative'>
+                <li key={category.name} className={classNames('position-relative',styles.parentItem)}>
                   <Link
                     to={`/category/${category.keyword}`}
                     className='d-flex justify-content-between align-items-center'

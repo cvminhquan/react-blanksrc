@@ -19,7 +19,8 @@
     "paths": {
       "~/*": ["src/*"]
     },
-    "types": ["react", "react-dom", "react-tooltip"]
+    "types": ["react", "react-dom"],
+    "strictNullChecks":false,
     
   },
   "include": ["src"],

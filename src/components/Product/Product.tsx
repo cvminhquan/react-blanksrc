@@ -7,15 +7,16 @@ import { FiSearch } from 'react-icons/fi'
 
 interface ProductProps {
   id: number
+  keyword: string
   name: string
   price: number
 }
-const Product: React.FC<ProductProps> = ({ id, name, price }) => {
+const Product: React.FC<ProductProps> = ({ id, name, price, keyword }) => {
   return (
     <div className='col-lg-4'>
       <div className={classNames(styles['product-item'])}>
         <div className={styles['product-info']}>
-          <Link to='' className={styles['product-photo']}>
+          <Link to={`/product/${keyword}`} className={styles['product-photo']}>
             <span className={styles.productContainer}>
               <img
                 src='https://baya.vn/media/catalog/product/cache/a87c63fd4e95b1606c03c9c7999fa76e/m/i/microsoftteams-image_1__4.png'

@@ -59,7 +59,7 @@
   box-shadow: none;
   transition: all 5s ease-in-out;
   .subMenu {
-    border-radius: 20px;
+    border-radius: 8px;
     background-color: #fff;
     border: 1px solid rgba(0, 123, 196, 1);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -78,7 +78,7 @@
       text-align: left;
     }
   }
-  li {
+  .parentItem {
     border-bottom: 1px solid rgba(232, 232, 232, 1);
     border-right: 1px solid rgba(232, 232, 232, 1);
     border-left: 1px solid rgba(232, 232, 232, 1);

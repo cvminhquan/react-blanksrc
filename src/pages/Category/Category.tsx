@@ -10,14 +10,14 @@ const Category: React.FC = (props) => {
   const { keyword } = useParams()
   const category = listCategories.find((cat) => cat.keyword === keyword)
   const products = [
-    { id: 1, name: 'Table', price: 231112 },
-    { id: 2, name: 'Chair', price: 7899 },
-    { id: 3, name: 'Sofa', price: 120000 },
-    { id: 4, name: 'Sofa', price: 120000 },
-    { id: 4, name: 'Sofa', price: 120000 },
-    { id: 4, name: 'Sofa', price: 120000 },
-    { id: 4, name: 'Sofa', price: 120000 },
-    { id: 4, name: 'Sofa', price: 120000 }
+    { id: 1, name: 'Table', price: 231112, keyword: 'abc' },
+    { id: 2, name: 'Chair', price: 7899, keyword: 'abc' },
+    { id: 3, name: 'Sofa', price: 120000, keyword: 'abc' },
+    { id: 4, name: 'Sofa', price: 120000, keyword: 'abc' },
+    { id: 5, name: 'Sofa', price: 120000, keyword: 'abc' },
+    { id: 6, name: 'Sofa', price: 120000, keyword: 'abc' },
+    { id: 7, name: 'Sofa', price: 120000, keyword: 'abc' },
+    { id: 8, name: 'Sofa', price: 120000, keyword: 'abc' }
     // Add more products here as needed
   ]
   return (

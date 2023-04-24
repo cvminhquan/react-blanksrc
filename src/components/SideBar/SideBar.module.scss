@@ -11,8 +11,9 @@
       padding: 12px 18px;
       border-bottom: 1px solid #ececec;
       transition: 0.5s all ease-in-out;
-      a {
+      .categoryName {
         color: $color-p-black;
+        font-weight: 600;
         &:hover {
           text-decoration: underline;
         }
@@ -32,22 +33,30 @@
 .toggleArrow {
   cursor: pointer;
 }
+.subMenu.open {
+  // transition: max-height 0.5s ease;
+  max-height: 2000px;
+}
 .subMenu {
   margin: 5px 0 0 40px;
-  transition: max-height 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
   .subMenuItem a {
     display: inline-block;
     padding: 12px 0;
     border-bottom: 1px solid #ececec;
     transition: 0.5s all ease-in-out;
-    a {
       color: $color-p-black;
+      font-weight: 400;
       &:hover {
         text-decoration: underline;
       }
-    }
     &:last-child {
       border-bottom: none;
     }
+  }
+  .linkItem{
+    font-weight: 400;
   }
 }
