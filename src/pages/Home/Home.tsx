@@ -1,4 +1,4 @@
-import React,{ useState }  from 'react'
+import React, { useState } from 'react'
 import styles from './Home.module.scss'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
@@ -15,13 +15,13 @@ import banner2 from '../../assets/img/02.jpg'
 import { listCategories } from '~/data/listCategories'
 
 interface Banner {
-  id: number;
-  keyword: string;
-  subTitle: string;
-  title: string;
-  price: number;
-  descripsion: string;
-  img: string;
+  id: number
+  keyword: string
+  subTitle: string
+  title: string
+  price: number
+  descripsion: string
+  img: string
 }
 
 const Home: React.FC = (props) => {
@@ -66,8 +66,8 @@ const Home: React.FC = (props) => {
       descripsion:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
       img: banner2
-    },
-  ];
+    }
+  ]
   return (
     <div className='container'>
       <div className='col-12 d-flex my-30'>
@@ -85,12 +85,15 @@ const Home: React.FC = (props) => {
           <div className={styles.listMenu}>
             <ul className={styles.menu}>
               {parentCategories.map((category) => (
-                <li key={category.name} className={classNames('position-relative',styles.parentItem)}>
+                <li key={category.name} className={classNames('position-relative', styles.parentItem)}>
                   <Link
                     to={`/category/${category.keyword}`}
                     className='d-flex justify-content-between align-items-center'
                   >
-                    <span>{category.name}</span>
+                    <div className='flex-center'>
+                      <img src={category.img} width='20px' alt='' />
+                      <div>{category.name}</div>
+                    </div>
                     <span>
                       <MdOutlineKeyboardArrowRight />
                     </span>
