@@ -21,23 +21,29 @@ const Category: React.FC = (props) => {
     // Add more products here as needed
   ]
   return (
-    <div className='container my-20'>
-      <div className={styles.breadcrumbs}>
-        <ul className={styles.breadcrumbsItem}>
-          <li className='item home'>
-            <Link to='/' title='Đi đến trang chủ'>
-              Home
-            </Link>
-          </li>
-          <MdOutlineKeyboardArrowRight />
-          <li className='item category3'>
-            <strong>{category?.name}</strong>
-          </li>
-        </ul>
+    <>
+      <div className='container my-20'>
+        <div className={styles.breadcrumbs}>
+          <ul className={styles.breadcrumbsItem}>
+            <li className='item home'>
+              <Link to='/' title='Đi đến trang chủ'>
+                Home
+              </Link>
+            </li>
+            <MdOutlineKeyboardArrowRight />
+            <li className='item category3'>
+              <strong>{category?.name}</strong>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className={styles.pageTitleWrapper}>
         <h1 className={styles.categoryTitle}>{category?.name}</h1>
+        <ul>
+          {}
+        </ul>
       </div>
+      <div className="container">
       <div className='row'>
         <div className='col-lg-3'>
           <SideBar />
@@ -50,7 +56,8 @@ const Category: React.FC = (props) => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 
