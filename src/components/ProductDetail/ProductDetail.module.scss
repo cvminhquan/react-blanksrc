@@ -1,21 +1,55 @@
-@import "src/assets/styles/reset";
+@import 'src/assets/styles/reset';
 @import 'src/assets/styles/global.scss';
-@import "src/assets/styles/mixin";
-@import "src/assets/styles/variables";
+@import 'src/assets/styles/mixin';
+@import 'src/assets/styles/variables';
 
 .hotDealWrapper {
-    padding: 20px;
-    background: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
 
-    .hotDealTitle {
+  .hotDealTitle {
+    font-size: 14px;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0px;
+  }
+  .productHotDeal {
+    img {
+      width: 100%;
+    }
+  }
+}
+.productWrapper {
+  padding: 10px;
+  .gallery{
+    padding-left: 0;
+  }
+  .productImg {
+    img {
+      width: 100%;
+    }
+  }
+  .productTitle{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .productPrice{
+    color: $color-primary;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .productReview{
+    margin: 20px 0;
+    ul{
+        display: flex;
+    }
+  }
+  .productStatus{
+    .statusLabel{
         font-size: 14px;
-        border-bottom: 1px solid #e3e3e3;
-        padding-bottom: 10px;
-        text-transform: uppercase;
-        font-weight: bold;
-        margin-top: 0px;
     }
-    .productHotDeal{
-
-    }
+  }
 }

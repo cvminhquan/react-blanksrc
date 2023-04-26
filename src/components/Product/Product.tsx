@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { BsHeart } from 'react-icons/bs'
 import classNames from 'classnames'
 import { FiSearch } from 'react-icons/fi'
+import Button from '../Button/Button'
 
 interface ProductProps {
   id: number
@@ -38,8 +39,8 @@ const Product: React.FC<ProductProps> = ({ id, name, price, keyword }) => {
                       <BsHeart color='gray' size={25} />
                     </Link>
                   </div>
-                  <div className={styles.actionAdd}>
-                    <Link to=''>Add to Cart</Link>
+                  <div className={styles.actionAdd} >
+                  <Button content='Add to cart'/>
                   </div>
                   <div className={styles.preview}>
                     <FiSearch color='gray' size={25} />
