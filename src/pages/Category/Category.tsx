@@ -39,9 +39,6 @@ const Category: React.FC = (props) => {
       </div>
       <div className={styles.pageTitleWrapper}>
         <h1 className={styles.categoryTitle}>{category?.name}</h1>
-        <ul>
-          {}
-        </ul>
       </div>
       <div className="container">
       <div className='row'>

@@ -38,3 +38,13 @@ body{
   display: flex;
   align-items: center;
 }
+.actionAdd {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid $color-primary;
+  border-radius: 20px;
+  background-color: $color-primary;
+  a{
+    color: #fff;
+  }
+} 

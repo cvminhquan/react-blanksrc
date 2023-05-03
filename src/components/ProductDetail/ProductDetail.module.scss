@@ -23,7 +23,10 @@
 }
 .productWrapper {
   padding: 10px;
-  .gallery{
+  .productInfor > * {
+    margin-bottom: 20px;
+  }
+  .gallery {
     padding-left: 0;
   }
   .productImg {
@@ -31,25 +34,63 @@
       width: 100%;
     }
   }
-  .productTitle{
+  .productTitle {
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 20px;
   }
-  .productPrice{
+  .productPrice {
     color: $color-primary;
     font-size: 1.5rem;
     font-weight: 700;
   }
-  .productReview{
-    margin: 20px 0;
-    ul{
-        display: flex;
+  .productReview {
+    ul {
+      display: flex;
     }
   }
-  .productStatus{
-    .statusLabel{
-        font-size: 14px;
+  .productStatus {
+    .statusLabel {
+      font-size: 14px;
     }
   }
+}
+.quantInput {
+  display: inline-block;
+  height: 35px;
+  position: relative;
+  width: 70px;
+  .text {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #f2f2f2;
+    box-sizing: border-box;
+    font-size: 15px;
+    height: 35px;
+    left: 0;
+    padding: 0 20px 0 18px;
+    position: absolute;
+    top: 0;
+    width: 70px;
+    z-index: 1;
+  }
+}
+.arrows {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  height: 100%;
+  .arrow {
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    width: 40px;
+    cursor: pointer;
+  }
+}
+.infoContainer {
+  border-bottom: 1px solid #f2f2f2;
+  border-top: 1px solid #f2f2f2;
+  margin-bottom: 0;
+  padding: 20px 0;
+  line-height: 20px;
 }
