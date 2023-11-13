@@ -1,0 +1,112 @@
+@import 'src/assets/styles/reset';
+@import 'src/assets/styles/global.scss';
+@import 'src/assets/styles/mixin';
+@import 'src/assets/styles/variables';
+
+#about {
+  background-color: #fff;
+  padding: 15rem 0;
+}
+.contact-redirect-block {
+  position: relative;
+  padding: 185px 20px 75px;
+  text-align: center;
+}
+
+.cr-content .bl-arrow-icon,
+.cr-content .br-arrow-icon,
+.cr-content .curly-arrow-icon {
+  position: absolute;
+  top: 66px;
+}
+
+.cr-content .br-arrow-icon {
+  left: calc(50% - 370px);
+}
+
+.cr-content .bl-arrow-icon {
+  right: calc(50% - 360px);
+}
+
+.cr-content .curly-arrow-icon {
+  left: calc(50% - 45px);
+  top: -61px;
+}
+
+.cr-content .link-wrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 463px;
+  min-height: 235px;
+  margin: 0 auto;
+  -webkit-transition: all 0.35s ease;
+  -o-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+@media only screen and (min-width: 1080px) {
+  .cr-content .link-wrap:hover {
+    -webkit-transform: scale(1.1) !important;
+    -o-transform: scale(1.1) !important;
+    transform: scale(1.1) !important;
+  }
+}
+
+.cr-content .big-bubble-icon {
+  position: absolute;
+  left: 0;
+}
+
+.cr-content .h5 {
+  font-family: Source Code Pro, monospace;
+  font-weight: 500;
+  line-height: 24px;
+  color: #12110c;
+  font-size: 16px;
+  margin: 40px 0;
+}
+
+.cr-content .h1 {
+  font-size: 70px;
+}
+.cr-content .h1 strong {
+  color: #f6bbd4;
+}
+
+.cr-content .afro-guy-icon {
+  display: block;
+  margin: 16px auto 0;
+}
+
+@media only screen and (max-width: 1079px) {
+  .cr-content .br-arrow-icon {
+    top: 86px;
+    left: calc(50% - 200px);
+  }
+
+  .cr-content .bl-arrow-icon {
+    top: 80px;
+    right: calc(50% - 190px);
+  }
+
+  .cr-content .curly-arrow-icon {
+    left: calc(50% - 45px);
+    top: -28px;
+  }
+
+  .cr-content .link-wrap {
+    width: 100%;
+    max-width: 335px;
+    margin: 0 auto;
+    min-height: 174px;
+  }
+
+  .cr-content .h5 {
+    margin: 40px 0 10px;
+  }
+
+  .cr-content .h1 {
+    font-size: 48px;
+  }
+}

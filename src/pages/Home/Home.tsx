@@ -1,176 +1,81 @@
 import React, { useState } from 'react'
 import styles from './Home.module.scss'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
-import { Link } from 'react-router-dom'
-import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import 'swiper/css/grid'
-import { Pagination, Navigation, Grid } from 'swiper'
 import classNames from 'classnames'
-import banner1 from '../../assets/img/01.jpg'
-import banner2 from '../../assets/img/02.jpg'
-import { listCategories } from '~/data/listCategories'
-
-interface Banner {
-  id: number
-  keyword: string
-  subTitle: string
-  title: string
-  price: number
-  descripsion: string
-  img: string
-}
+import About from '../Contact/Contact'
+import Project from '../Project/Project'
+import AboutMe from '../AboutMe/AboutMe'
+import Button from 'react-bootstrap/Button';
 
 const Home: React.FC = (props) => {
-  const parentCategories = listCategories.filter((item) => item.parentId === null)
-  const listBanner: Banner[] = [
-    {
-      id: 1,
-      keyword: 'top-smartphone',
-      subTitle: 'Top smartphone',
-      title: 'Performance wonderful',
-      price: 999,
-      descripsion:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-      img: banner1
-    },
-    {
-      id: 2,
-      keyword: 'top-smartphone',
-      subTitle: 'Top smartphone',
-      title: 'Performance wonderful',
-      price: 999,
-      descripsion:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-      img: banner2
-    },
-    {
-      id: 3,
-      keyword: 'top-smartphone',
-      subTitle: 'Top smartphone',
-      title: 'Performance wonderful',
-      price: 999,
-      descripsion:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-      img: banner1
-    },
-    {
-      id: 4,
-      keyword: 'top-smartphone',
-      subTitle: 'Top smartphone',
-      title: 'Performance wonderful',
-      price: 999,
-      descripsion:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-      img: banner2
-    }
+  const imageList = [
+    { src: '/src/assets/img/HTML.svg', alt: 'HTML', title: 'HTML', cate: 'Programming' },
+    { src: '/src/assets/img/CSS.svg', alt: 'CSS', title: 'CSS', cate: 'Programming' },
+    { src: '/src/assets/img/JavaScript.svg', alt: 'JavaScript', title: 'JavaScript', cate: 'Programming' },
+    { src: '/src/assets/img/Typescript.svg', alt: 'Typescript', title: 'Typescript', cate: 'Programming' },
+    { src: '/src/assets/img/JQuery.svg', alt: 'JQuery', title: 'JQuery', cate: 'Programming' },
+    { src: '/src/assets/img/Bootstrap.svg', alt: 'Bootstrap', title: 'Bootstrap', cate: 'Framework' },
+    { src: '/src/assets/img/Sass.svg', alt: 'Sass', title: 'Sass', cate: 'Framework' },
+    { src: '/src/assets/img/PHP.svg', alt: 'PHP', title: 'PHP', cate: 'Programming' },
+    { src: '/src/assets/img/React.svg', alt: 'React', title: 'React', cate: 'Framework' },
+    { src: '/src/assets/img/Wordpress.svg', alt: 'Wordpress', title: 'Wordpress', cate: 'Framework' }
   ]
+
+  // Lọc danh sách hình ảnh có cate là "Programming"
+  const programmingImages = imageList.filter((image) => image.cate === 'Programming')
+  const frameworkImages = imageList.filter((image) => image.cate === 'Framework')
+
   return (
-    <div className='container'>
-      <div className='col-12 d-flex my-30'>
-        <div className={styles.category}>
-          <div className={styles.menuCategory}>
-            <div className={styles.headerCategory}>
-              <div className={styles.menuOpen}>
-                <span className={styles.menuIcon}>
-                  <GiHamburgerMenu size={22} />
-                </span>
-                <span className={styles.menuLabel}>Category</span>
+    <>
+      <div id='home' className={styles['hero']}>
+        <div className={classNames(styles['container'])}>
+          <div className='timeline'>
+            <div className='bullet'></div>
+          </div>
+          <div className={classNames(styles['content'], 'hero')}>
+            <div className={styles['hero-main']}>
+              <div className={styles['hero-text']}>
+                <h1>Front-End Developer</h1>
+                <p>Hi, I&apos;m Quan - a Front-End Developer. Welcome to my portfolio</p>
+                <Button className={styles.downloadCV}>Download CV</Button>
+              </div>
+              <div className={styles['hero-img']}></div>
+            </div>
+            <div className={styles['skills']}>
+              <div className={styles['logos']}>
+                <table>
+                  <tr>
+                    <td style={{verticalAlign: "middle"}}>Programming skill</td>
+                    {programmingImages.map((image, index) => (
+                      <td key={index}>
+                        <img src={image.src} alt={image.alt} title={image.title} />
+                      </td>
+                    ))}
+                  </tr>
+                  <tr>
+                    <td style={{verticalAlign: "middle"}}>Framework</td>
+                    {frameworkImages.map((image, index) => (
+                      <td key={index}>
+                        <img src={image.src} alt={image.alt} title={image.title} />
+                      </td>
+                    ))}
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
-          <div className={styles.listMenu}>
-            <ul className={styles.menu}>
-              {parentCategories.map((category) => (
-                <li key={category.name} className={classNames('position-relative', styles.parentItem)}>
-                  <Link
-                    to={`/category/${category.keyword}`}
-                    className='d-flex justify-content-between align-items-center'
-                  >
-                    <div className='flex-center'>
-                      <img src={category.img} width='20px' alt='' />
-                      <div>{category.name}</div>
-                    </div>
-                    <span>
-                      <MdOutlineKeyboardArrowRight />
-                    </span>
-                  </Link>
-                  <ul className={styles.subMenu}>
-                    <li>
-                      <div className='row'>
-                        {listCategories
-                          .filter((item) => item.parentId === category.id)
-                          .map((subCategory) => (
-                            <div className='col-lg-3' key={subCategory.id}>
-                              <Link to={`/category/${subCategory.keyword}`}>{subCategory.name}</Link>
-                            </div>
-                          ))}
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
-        <Swiper
-          slidesPerView={1}
-          loop={true}
-          pagination={{
-            clickable: true
-          }}
-          onSlideChange={() => console.log('slide change')}
-          modules={[Pagination]}
-          className={classNames('mySwiper', styles.swiperHome)}
-        >
-          {listBanner.map((banner) => (
-            <SwiperSlide key={banner.id} className={styles.swiperBanner}>
-              <img src={banner.img} alt='' />
-              <div className={styles.inforBanner}>
-                <h3 className={styles.bannerSubTitle}>{banner.subTitle}</h3>
-                <h2 className={styles.bannerTitle}>{banner.title}</h2>
-                <div className={styles.bannerDescription}>{banner.descripsion}</div>
-                <Link to={banner.keyword} className={styles.bannerButton}>
-                  {banner.price}$ | Buy Now
-                </Link>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
       </div>
-
-      {/* <div className='col'>
-        <div className={styles.sectionCategory}>
-          fasdjfhjashf ádfjash
-          <div className='row gy-5'>
-            <h2>Category</h2>
-            <Swiper
-              slidesPerView={5}
-              navigation={true}
-              loop={true}
-              grid={{
-                rows: 2
-              }}
-              modules={[Grid, Navigation, Pagination]}
-            >
-              {listCategories.map((category) => (
-                <SwiperSlide key={category.name}>
-                  <Link to=''>
-                    <div className={styles.categoryItem}>
-                      <img src={category.img} alt='' />
-                      <span>{category.name}</span>
-                    </div>
-                  </Link>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
+      {/* <div className='' id='about'>
+        <AboutMe />
+      </div>
+      <div className='' id='project'>
+        <About />
       </div> */}
-    </div>
+    </>
   )
 }
 
