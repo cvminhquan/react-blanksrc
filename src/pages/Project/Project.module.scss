@@ -2,3 +2,59 @@
 @import 'src/assets/styles/global.scss';
 @import "src/assets/styles/mixin";
 @import "src/assets/styles/variables";
+
+.projectsGrid{
+    display:flex;
+    flex-direction: column;
+    gap: 5rem;
+    >div{
+        &:nth-child(even){
+            flex-direction: row-reverse;
+        }
+    }
+}
+.projectContent{
+    padding: 0 10rem;
+}
+.projectBox{
+    
+}
+.text-side {
+    padding-right: 1.5rem;
+    @media (max-width: 1020px) {
+      max-width: 54rem;
+      margin: 0 auto;
+    }
+  
+    @media (max-width: 400px) {
+      padding-right: 0;
+    }
+  
+    span {
+      text-decoration: underline $color-h3;
+    }
+  
+    h3 {
+      font-size: 20px;
+      color: $color-h3;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+  
+    h4 {
+      font-size: 32px;
+      font-family: #2d2e32;
+      line-height: 1.4;
+      margin-bottom: 2rem;
+      color: $color-shade;
+    }
+  
+    p {
+      font-size: 20px;
+      font-family: $text-font;
+      color: $color-p-black;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }

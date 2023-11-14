@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styles from './Home.module.scss'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import 'swiper/css/grid'
 import classNames from 'classnames'
-import About from '../Contact/Contact'
-import Project from '../Project/Project'
-import AboutMe from '../AboutMe/AboutMe'
 import Button from 'react-bootstrap/Button';
+import {HiOutlineDownload} from 'react-icons/hi'
+import About from '../About/About'
+import Project from '../Project/Project'
 
 const Home: React.FC = (props) => {
   const imageList = [
@@ -24,7 +24,6 @@ const Home: React.FC = (props) => {
     { src: '/src/assets/img/Wordpress.svg', alt: 'Wordpress', title: 'Wordpress', cate: 'Framework' }
   ]
 
-  // Lọc danh sách hình ảnh có cate là "Programming"
   const programmingImages = imageList.filter((image) => image.cate === 'Programming')
   const frameworkImages = imageList.filter((image) => image.cate === 'Framework')
 
@@ -39,8 +38,9 @@ const Home: React.FC = (props) => {
             <div className={styles['hero-main']}>
               <div className={styles['hero-text']}>
                 <h1>Front-End Developer</h1>
-                <p>Hi, I&apos;m Quan - a Front-End Developer. Welcome to my portfolio</p>
-                <Button className={styles.downloadCV}>Download CV</Button>
+                <p className={classNames(styles.heroName, "font-cursive")}>👋 <span>Hi, I&apos;m Quan </span></p>
+                  <p>A Front-End Developer. Welcome to my portfolio</p>
+                <Button className={styles.downloadCV}>Download CV <HiOutlineDownload size={20}/></Button>
               </div>
               <div className={styles['hero-img']}></div>
             </div>
@@ -69,12 +69,12 @@ const Home: React.FC = (props) => {
           </div>
         </div>
       </div>
-      {/* <div className='' id='about'>
-        <AboutMe />
+      <div className='' id='about'>
+        <About />
       </div>
       <div className='' id='project'>
-        <About />
-      </div> */}
+        <Project />
+      </div>
     </>
   )
 }
